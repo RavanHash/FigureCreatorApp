@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace FigureCreatorApp.Figures
 {
@@ -32,19 +33,27 @@ namespace FigureCreatorApp.Figures
             Perimetr += Math.Sqrt(Pow(Points[Points.Count - 1].X - Points[0].X) + Pow(Points[Points.Count - 1].Y - Points[0].Y));
         }
 
-        public override void Move(Point point)
-        {
-
-        }
-
         public override void Scale(double scale)
         {
-            
+            for (int i = 0; i < Points.Count; i++)
+            {
+                double x = (Points[i].X - Center.X) * scale + Center.X;
+                double y = (Points[i].Y - Center.Y) * scale + Center.Y;
+                Points[i] = new Point(x, y);
+            }
+            CalculateArea();
+            CalculatePerimetr();
         }
 
         public override void Rotate(double angle)
         {
-            
+            angle = angle * Math.PI / 180;
+            for (int i = 0; i < Points.Count; i++)
+            {
+                double x = (Points[i].X - Center.X) * Math.Cos(angle) - (Points[i].Y - Center.Y) * Math.Sin(angle);
+                double y = (Points[i].X - Center.X) * Math.Sin(angle) + (Points[i].Y - Center.Y) * Math.Cos(angle);
+                Points[i] = new Point(x, y);
+            }
         }
 
         public double Pow(double a)

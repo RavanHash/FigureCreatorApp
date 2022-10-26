@@ -18,16 +18,17 @@ namespace FigureCreatorApp.Figures
             return result;
         }
 
-        //public override bool Equals(Object obj)
-        //{
-        //    if (this == obj) 
-        //        return true;
+        public override bool Equals(Object obj)
+        {
+            if (this == obj)
+                return true;
 
-        //    if (obj == null || getClass() != obj.getClass()) 
-        //        return false;
+            if (obj == null || GetType() != obj.GetType())
+                return false;
 
-        //    Point point = (Point)obj;
-        //    return Double.compare(point.X, X) == 0 && Double.compare(point.Y, Y) == 0;
-        //}
+            Point point = (Point)obj;
+
+            return point.X.CompareTo(X) == 0 && point.Y.CompareTo(Y) == 0;
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static FigureCreatorApp.Menu.Program;
+using FigureCreatorApp.Menu;
 using FigureCreatorApp.Figures;
 
 namespace FigureCreatorApp
@@ -30,7 +30,7 @@ namespace FigureCreatorApp
             Point d = new Point(2, 0);
             points.Add(d);
 
-            Figure figure = new Polygon(points);
+            Figure figure = new Triangle(points);
 
             Console.WriteLine(figure.ToString());
 

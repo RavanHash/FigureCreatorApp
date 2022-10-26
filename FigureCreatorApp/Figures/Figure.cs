@@ -20,13 +20,18 @@ namespace FigureCreatorApp.Figures
             this.Points = points;
         }
 
-        public abstract void Move(Point point);
         public abstract void Scale(double scale);
         public abstract void Rotate(double andle);
 
-        public double CalculateSide(Point firstCoordinate, Point secondCoordinate)
+        public virtual void Move(Point step)
         {
-            return (Math.Pow(Math.Pow(secondCoordinate.X - firstCoordinate.X, 2) + Math.Pow(secondCoordinate.Y - firstCoordinate.Y, 2), 0.5));
+            for (int i = 0; i < Points.Count; i++)
+            {
+                double x = this.Points[i].X + step.X;
+                double y = this.Points[i].Y + step.Y;
+                Points[i] = new Point(x, y);
+            }
+            CalculateCenter();
         }
 
         public void CalculateCenter()
@@ -39,6 +44,11 @@ namespace FigureCreatorApp.Figures
                 sumY += point.Y;
             }
             Center = new Point(sumX / Points.Count, sumY / Points.Count);
+        }
+
+        public double CalculateSide(Point firstCoordinate, Point secondCoordinate)
+        {
+            return (Math.Pow(Math.Pow(secondCoordinate.X - firstCoordinate.X, 2) + Math.Pow(secondCoordinate.Y - firstCoordinate.Y, 2), 0.5));
         }
 
         public override String ToString()
@@ -63,12 +73,16 @@ namespace FigureCreatorApp.Figures
             return result.ToString();
         }
 
-        //public override bool Equals(Object o)
-        //{
-        //    if (this == o) return true;
-        //    if (o == null || getClass() != o.getClass()) return false;
-        //    Figure figure = (Figure)o;
-        //    return Objects.equals(Points, figure.Points);
-        //}
+        public override bool Equals(Object obj)
+        {
+            if (this == obj) 
+                return true;
+
+            if (obj == null || GetType() != obj.GetType()) 
+                return false;
+
+            Figure figure = (Figure)obj;
+            return Points.Equals(figure.Points);
+        }
     }
 }
