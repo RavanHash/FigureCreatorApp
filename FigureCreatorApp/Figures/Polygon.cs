@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace FigureCreatorApp.Figures
 {
@@ -18,7 +17,7 @@ namespace FigureCreatorApp.Figures
             Area = 0;
             for (int i = 0; i < Points.Count - 1; i++)
             {
-                Area += Math.Abs(Points[i].X * Points[i + 1].Y - Points[i].X * Points[i + 1].X);
+                Area = Math.Abs(Points[i].X * Points[i + 1].Y - Points[i].Y * Points[i + 1].X);
             }
         }
 

@@ -53,7 +53,8 @@
     <Compile Include="Figures\Polygon.cs" />
     <Compile Include="Figures\Square.cs" />
     <Compile Include="Figures\Triangle.cs" />
-    <Compile Include="Menu\InputManager.cs" />
+    <Compile Include="Mangers\FileManager.cs" />
+    <Compile Include="Mangers\InputManager.cs" />
     <Compile Include="Menu\MenuLogic.cs" />
     <Compile Include="Menu\MenuUI.cs" />
     <Compile Include="Program.cs" />
@@ -61,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="figure.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

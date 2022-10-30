@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
 using System.Text;
-using FigureCreatorApp.Menu;
+using FigureCreatorApp.Mangers;
+using System.Collections.Generic;
 
 namespace FigureCreatorApp.Figures
 {
@@ -48,16 +47,15 @@ namespace FigureCreatorApp.Figures
         public static Circle Input()
         {
             List<Point> points = new List<Point>();
-            InputManager inputManager = new InputManager();
 
             Console.WriteLine("Введите координаты центра круга");
-            double x = inputManager.GetDoubleInput();
-            double y = inputManager.GetDoubleInput();
+            double x = InputManager.GetDoubleInput();
+            double y = InputManager.GetDoubleInput();
             points.Add(new Point(x, y));
 
             Console.WriteLine("Введите координаты точки которая будет находиться на круге");
-            x = inputManager.GetDoubleInput();
-            y = inputManager.GetDoubleInput();
+            x = InputManager.GetDoubleInput();
+            y = InputManager.GetDoubleInput();
             points.Add(new Point(x, y));
 
             return new Circle(points);

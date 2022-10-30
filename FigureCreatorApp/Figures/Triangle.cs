@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using  FigureCreatorApp.Menu;
+using  FigureCreatorApp.Mangers;
 
 namespace FigureCreatorApp.Figures
 {
@@ -11,17 +11,16 @@ namespace FigureCreatorApp.Figures
         public static Triangle Input()
         {
             List<Point> points = new List<Point>();
-            InputManager inputManager = new InputManager();
 
             Console.WriteLine("Введите координаты фигуры");
             int n = 3;
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine((i + 1) + " точка ");
-                double x = inputManager.GetDoubleInput();
-                double y = inputManager.GetDoubleInput();
+                double x = InputManager.GetDoubleInput();
+                double y = InputManager.GetDoubleInput();
 
-                points[i] = new Point(x, y);
+                points.Add(new Point(x, y));
             }
             Console.WriteLine(" Фигура построена! ");
             return new Triangle(points);

@@ -1,66 +1,47 @@
 ﻿using System;
+using FigureCreatorApp.Figures;
+using FigureCreatorApp.Mangers;
+using FigureCreatorApp.Factories;
 
 namespace FigureCreatorApp.Menu
 {
-    internal partial class Program
+    public static class MenuLogic
     {
-        public class MenuLogic
+        public static void MainMenu()
         {
-            public void MainMenu()
+            MenuUI.ShowMainMenu();
+            int option = InputManager.ChooseOption(0, 4);
+            switch (option)
             {
-                MenuUI menuUi = new MenuUI();
+                case 1:
+                    FileManager.ShowAllFigures();
+                    MainMenu();
+                    break;
+                case 2:
+                    ChooseFigure();
+                    break;
+                case 3:
 
-                InputManager inputManager = new InputManager();
-                int option = inputManager.ChooseOption(0, 4);
-
-                switch (option)
-                {
-                    case 1:
-
-                        break;
-                    case 2:
-                        menuUi.ShowCreateFigureMenu();
-                        ChooseFigure();
-                        break;
-                    case 3:
-
-                        break;
-                    case 4:
-
-                        break;
-                    case 0:
-                        Environment.Exit(0);
-                        break;
-                }
+                    break;
+                case 4:
+                    FileManager.SaveToFile();
+                    MainMenu();
+                    break;
+                case 0:
+                    FileManager.SaveToFile();
+                    Environment.Exit(0);
+                    break;
             }
+        }
 
-            public void ChooseFigure()
-            {
-                MenuUI menuUi = new MenuUI();
+        public static void ChooseFigure()
+        {
+            MenuUI.ShowCreateFigureMenu();
 
-                InputManager inputManager = new InputManager();
-                int option = inputManager.ChooseOption(0, 5);
-
-                switch (option)
-                {
-                    case 1:
-
-                        break;
-                    case 2:
-
-                        break;
-                    case 3:
-
-                        break;
-                    case 4:
-
-                        break;
-                    case 0:
-                        menuUi.ShowMainMenu();
-                        MainMenu();
-                        break;
-                }
-            }
+            FigureCreator figureCreator = FigureCreator.SelectFigure();
+            Figure figure = figureCreator.CreateFigure();
+            FileManager.FigureList.Add(figure);
+            MainMenu();
         }
     }
 }

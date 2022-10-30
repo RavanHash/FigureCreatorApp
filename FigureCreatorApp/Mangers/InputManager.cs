@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace FigureCreatorApp.Menu
+namespace FigureCreatorApp.Mangers
 {
-    public class InputManager
+    public static class InputManager
     {
-        public int ChooseOption(int min, int max)
+        public static int ChooseOption(int min, int max)
         {
             Console.Write(" Enter integer number: ");
 
@@ -20,7 +20,7 @@ namespace FigureCreatorApp.Menu
             return number;
         }
 
-        public double GetDoubleInput()
+        public static double GetDoubleInput()
         {
             double number;
 
