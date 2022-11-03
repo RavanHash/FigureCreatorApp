@@ -9,7 +9,7 @@ namespace FigureCreatorApp
     {
         static void Main(string[] args)
         {
-            FileManager.InitializeAtStart();
+            FileManager.InitializeFromFile();
             MenuLogic.MainMenu();
 
             Console.ReadKey();

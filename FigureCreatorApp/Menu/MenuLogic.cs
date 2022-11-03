@@ -14,14 +14,14 @@ namespace FigureCreatorApp.Menu
             switch (option)
             {
                 case 1:
-                    FileManager.ShowAllFigures();
+                    FileManager.ShowAllUnsavedFigures();
                     MainMenu();
                     break;
                 case 2:
                     ChooseFigure();
                     break;
                 case 3:
-
+                    ChangeFigure();
                     break;
                 case 4:
                     FileManager.SaveToFile();
@@ -42,6 +42,25 @@ namespace FigureCreatorApp.Menu
             Figure figure = figureCreator.CreateFigure();
             FileManager.FigureList.Add(figure);
             MainMenu();
+        }
+
+        public static void ChangeFigure()
+        {
+            FileManager.ShowAllUnsavedFigures();
+            MenuUI.ShowChangeFigureMenu();
+
+            int option = InputManager.ChooseOption(0, FileManager.FigureList.Count);
+            if(option == 0)
+            {
+                MainMenu();
+            }
+            else
+            {
+                FigureCreator figureCreator = FigureCreator.ChangeFigure(option - 1);
+                Figure figure = figureCreator.CreateFigure();
+                FileManager.FigureList[option - 1] = figure;
+                MainMenu();
+            }
         }
     }
 }

@@ -1,0 +1,84 @@
+[
+  {
+    "$type": "FigureCreatorApp.Figures.Triangle, FigureCreatorApp",
+    "Points": [
+      {
+        "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+        "X": 3.0,
+        "Y": 2.0
+      },
+      {
+        "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+        "X": 3.0,
+        "Y": 8.0
+      },
+      {
+        "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+        "X": 10.0,
+        "Y": 8.0
+      }
+    ],
+    "Center": {
+      "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+      "X": 5.333333333333333,
+      "Y": 6.0
+    },
+    "Area": 56.0,
+    "Perimetr": 22.219544457292887
+  },
+  {
+    "$type": "FigureCreatorApp.Figures.Square, FigureCreatorApp",
+    "Points": [
+      {
+        "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+        "X": 3.0,
+        "Y": 2.0
+      },
+      {
+        "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+        "X": 3.0,
+        "Y": 8.0
+      },
+      {
+        "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+        "X": 10.0,
+        "Y": 8.0
+      },
+      {
+        "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+        "X": 10.0,
+        "Y": 2.0
+      }
+    ],
+    "Center": {
+      "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+      "X": 6.5,
+      "Y": 5.0
+    },
+    "Area": 60.0,
+    "Perimetr": 26.0
+  },
+  {
+    "$type": "FigureCreatorApp.Figures.Circle, FigureCreatorApp",
+    "Radius": 2.0,
+    "Points": [
+      {
+        "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+        "X": 2.0,
+        "Y": 2.0
+      },
+      {
+        "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+        "X": 2.0,
+        "Y": 4.0
+      }
+    ],
+    "Center": {
+      "$type": "FigureCreatorApp.Figures.Point, FigureCreatorApp",
+      "X": 2.0,
+      "Y": 2.0
+    },
+    "Area": 6.2831853071795862,
+    "Perimetr": 6.2831853071795862
+  }
+]

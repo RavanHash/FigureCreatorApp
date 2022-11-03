@@ -16,6 +16,7 @@ namespace FigureCreatorApp.Figures
             this.Points = points;
         }
 
+
         public abstract void Scale(double scale);
         public abstract void Rotate(double andle);
 

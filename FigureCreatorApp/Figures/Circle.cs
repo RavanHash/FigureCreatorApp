@@ -87,7 +87,8 @@ namespace FigureCreatorApp.Figures
                     .Append("\nПлощадь: ")
                     .Append(Area)
                     .Append("\nПериметр: ")
-                    .Append(Perimetr);
+                    .Append(Perimetr)
+                    .Append("\n");
 
             return result.ToString();
         }
