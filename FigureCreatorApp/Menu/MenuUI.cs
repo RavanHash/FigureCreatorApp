@@ -24,10 +24,19 @@ namespace FigureCreatorApp.Menu
             Console.WriteLine("\n 0. Back to Main Menu.\n");
         }
         
-        public static void ShowChangeFigureMenu()
+        public static void ShowSelectChangeFigureMenu()
         {
             Console.WriteLine("\n 0. Back to Main Menu.");
             Console.WriteLine(" Select the number of the shape you want to change:\n");
+        }
+        
+        public static void ShowChangeFigureMenu()
+        {
+            Console.WriteLine("\n Choose one option:\n");
+            Console.WriteLine(" 1. Move");
+            Console.WriteLine(" 2. Rotate");
+            Console.WriteLine(" 3. Scale");
+            Console.WriteLine("\n 0. Back to Main Menu.\n");
         }
     }
 }

@@ -43,25 +43,5 @@ namespace FigureCreatorApp.Factories
 
             return figureCreator;
         }
-
-        public static FigureCreator ChangeFigure(int figureIndex)
-        {
-            FigureCreator figureCreator = new SquareCreator();
-
-            if (FileManager.FigureList[figureIndex].GetType() == typeof(Square))
-            {
-                figureCreator = new SquareCreator();
-            }
-            else if (FileManager.FigureList[figureIndex].GetType() == typeof(Triangle))
-            {
-                figureCreator = new TriangleCreator();
-            }
-            else if (FileManager.FigureList[figureIndex].GetType() == typeof(Circle))
-            {
-                figureCreator = new CircleCreator();
-            }
-
-            return figureCreator;
-        }
     }
 }

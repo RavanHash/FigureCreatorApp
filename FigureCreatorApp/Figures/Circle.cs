@@ -24,12 +24,12 @@ namespace FigureCreatorApp.Figures
 
         public void CalculatePerimetr()
         {
-            this.Perimetr = Math.PI * Radius;
+            this.Perimetr = 2 * Math.PI * Radius;
         }
 
         public void CalculateArea()
         {
-            this.Area = Math.PI * Radius * Radius / 2;
+            this.Area = Math.PI * Radius * Radius;
         }
 
         public override void Rotate(double andle)
@@ -48,12 +48,12 @@ namespace FigureCreatorApp.Figures
         {
             List<Point> points = new List<Point>();
 
-            Console.WriteLine("Введите координаты центра круга");
+            Console.WriteLine(" Enter the coordinates of the center of the circle");
             double x = InputManager.GetDoubleInput();
             double y = InputManager.GetDoubleInput();
             points.Add(new Point(x, y));
 
-            Console.WriteLine("Введите координаты точки которая будет находиться на круге");
+            Console.WriteLine(" Enter the coordinates of the point that will be on the circle");
             x = InputManager.GetDoubleInput();
             y = InputManager.GetDoubleInput();
             points.Add(new Point(x, y));
@@ -67,26 +67,26 @@ namespace FigureCreatorApp.Figures
             String name = GetType().Name;
 
             result
-                    .Append(name)
-                    .Append("\nКоординаты центра круга")
+                    .Append("    "+ name)
+                    .Append("\n Circle center coordinates")
                     .Append(0)
                     .Append(": x=")
                     .Append(Points[0].X)
                     .Append(", y=")
                     .Append(Points[0].Y)
                     .Append(";")
-                    .Append("\nКоординаты точки на окружности")
+                    .Append("\n Coordinates of a point on a circle")
                     .Append(1)
                     .Append(": x=")
                     .Append(Points[1].X)
                     .Append(", y=")
                     .Append(Points[1].Y)
                     .Append(";")
-                    .Append("\nРадиус: ")
+                    .Append("\n Radius: ")
                     .Append(Radius)
-                    .Append("\nПлощадь: ")
+                    .Append("\n Area: ")
                     .Append(Area)
-                    .Append("\nПериметр: ")
+                    .Append("\n Perimeter: ")
                     .Append(Perimetr)
                     .Append("\n");
 

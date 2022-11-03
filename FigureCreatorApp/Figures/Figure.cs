@@ -16,7 +16,6 @@ namespace FigureCreatorApp.Figures
             this.Points = points;
         }
 
-
         public abstract void Scale(double scale);
         public abstract void Rotate(double andle);
 
@@ -53,11 +52,11 @@ namespace FigureCreatorApp.Figures
             StringBuilder result = new StringBuilder();
             String name = GetType().Name;
 
-            result.Append(name);
+            result.Append("    " + name);
             for (int i = 0; i < Points.Count; i++)
             {
                 result
-                        .Append("\nКоординаты вершины N ")
+                        .Append("\n Vertex N coordinates ")
                         .Append(i + 1)
                         .Append(": x=")
                         .Append(Convert.ToString(Points[i].X))
@@ -65,7 +64,7 @@ namespace FigureCreatorApp.Figures
                         .Append(Convert.ToString(Points[i].Y))
                         .Append(";");
             }
-            result.Append("\nПлощадь: ").Append(Area).Append("\nПериметр: ").Append(Perimetr).Append("\n");
+            result.Append("\n Area: ").Append(Area).Append("\n Perimeter: ").Append(Perimetr).Append("\n");
 
             return result.ToString();
         }

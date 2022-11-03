@@ -40,7 +40,7 @@ namespace FigureCreatorApp.Mangers
         {
             for (int i = 0; i < FigureList.Count; i++)
             {
-                Console.WriteLine("------" + (i + 1) + "------");
+                Console.WriteLine(" ------" + (i + 1) + "------");
                 Console.WriteLine(FigureList[i].ToString());
             }
         }
@@ -50,37 +50,37 @@ namespace FigureCreatorApp.Mangers
             FigureList = GetListOfFiguresFromFile();
             for (int i = 0; i < FigureList.Count; i++)
             {
-                Console.WriteLine("------" + (i + 1) + "------");
+                Console.WriteLine(" ------" + (i + 1) + "------");
                 Console.WriteLine(FigureList[i].ToString());
             }
         }
 
-        public static void InitializeAtStart()
+        public static void InitializeDefaultFigures()
         {
             List<Point> trianglePoints = new List<Point>();
             trianglePoints.AddRange(new List<Point> 
             { 
-                new Point(3, 2), 
-                new Point(3, 8), 
-                new Point(10, 8) 
+                new Point(0, 0), 
+                new Point(0, 4), 
+                new Point(3, 0) 
             });
             Triangle triangle = new Triangle(trianglePoints);
 
             List<Point> squarePoints = new List<Point>();
             squarePoints.AddRange(new List<Point>
             {
-                new Point(3, 2),
-                new Point(3, 8),
-                new Point(10, 8),
-                new Point(10, 2)
+                new Point(0, 0),
+                new Point(0, 5),
+                new Point(5, 5),
+                new Point(5, 0)
             });
             Square square = new Square(squarePoints);
 
             List<Point> circlePoints = new List<Point>();
             circlePoints.AddRange(new List<Point>
             {
-                new Point(2, 2),
-                new Point(2, 4)
+                new Point(0, 0),
+                new Point(0, 3)
             });
             Circle circle = new Circle(circlePoints);
 

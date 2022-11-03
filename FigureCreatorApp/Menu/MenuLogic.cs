@@ -47,19 +47,34 @@ namespace FigureCreatorApp.Menu
         public static void ChangeFigure()
         {
             FileManager.ShowAllUnsavedFigures();
-            MenuUI.ShowChangeFigureMenu();
-
+            MenuUI.ShowSelectChangeFigureMenu();
             int option = InputManager.ChooseOption(0, FileManager.FigureList.Count);
-            if(option == 0)
+            if (option == 0)
             {
                 MainMenu();
             }
             else
             {
-                FigureCreator figureCreator = FigureCreator.ChangeFigure(option - 1);
-                Figure figure = figureCreator.CreateFigure();
-                FileManager.FigureList[option - 1] = figure;
-                MainMenu();
+                MenuUI.ShowChangeFigureMenu();
+                int op = InputManager.ChooseOption(0, 3);
+                switch (op)
+                {
+                    case 1:
+                        FileManager.FigureList[option - 1].Move(InputManager.GetPoint());
+                        MainMenu();
+                        break;
+                    case 2:
+                        FileManager.FigureList[option - 1].Rotate(InputManager.GetDoubleInput());
+                        MainMenu();
+                        break;
+                    case 3:
+                        FileManager.FigureList[option - 1].Scale(InputManager.GetDoubleInput());
+                        MainMenu();
+                        break;
+                    case 0:
+                        MainMenu();
+                        break;
+                }
             }
         }
     }

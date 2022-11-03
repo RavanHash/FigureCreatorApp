@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FigureCreatorApp.Figures;
+using System;
+using System.Reflection;
 
 namespace FigureCreatorApp.Mangers
 {
@@ -24,14 +26,29 @@ namespace FigureCreatorApp.Mangers
         {
             double number;
 
-            Console.Write("Enter double number: ");
+            Console.Write(" Enter double number: ");
 
             while (!double.TryParse(Console.ReadLine(), out number))
             {
-                Console.Write("This is not valid input. Please enter an integer value: ");
+                Console.Write(" This is not valid input. Please enter an integer value: ");
             }
 
             return number;
+        }
+        
+        public static Point GetPoint()
+        {
+            Point point = new Point(0, 0);
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine((i + 1) + " point ");
+                double x = InputManager.GetDoubleInput();
+                double y = InputManager.GetDoubleInput();
+
+                point = new Point(x, y);
+            }
+
+            return point;
         }
     }
 }
